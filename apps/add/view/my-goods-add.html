@@ -1,0 +1,83 @@
+<div class="img-load"><img src="../images/load.gif"/></div>
+  <header>
+    <div class="my-goods-add-header">
+        <div class="title active" style="border-right:1px solid #bcbbbb"  ng-click="showType()" change-title>发布</div>
+        <div class="title"  ng-click="showType()" change-title>求购</div>
+    </div>
+  </header>
+  <div class="my-goods-add-container">
+        <div class="input-group">
+          <span class="input-group-addon" style="position:relative">商品类型<span style="position:absolute;top:0;right:2px;color:#f77462">*</span></span>
+          <select class="form-control" ng-model="category" style="background:#f7f3f2">
+            <option value="0">其他</option>
+            <option value="1">女生穿搭</option>
+            <option value="2">男生穿搭</option>
+            <option value="3">数码电器</option>
+            <option value="4">护肤彩妆</option>
+            <option value="5">书刊学品</option>
+            <option value="6">生活百货</option>
+            <option value="7">运动票券</option>
+          </select>
+        </div>
+        <div class="input-group">
+          <span class="input-group-addon" style="position:relative">商品价格<span style="position:absolute;top:0;right:2px;color:#f77462">*</span></span>
+          <input type="number" class="form-control" ng-model="price"  placeholder="请输入纯数字" style="border:none;border-bottom:1px solid #979797;border-radius:none;width:143px;background:#f7f3f2">
+          <!-- <span style="vertical-align:middle;line-height:30px;" ng-if="myTag!=true">(选填)</span> 发布和求购还是...-->
+        </div>
+        <div class="input-group">
+          <span class="input-group-addon" style="position:relative">商品描述<span style="position:absolute;top:15px;right:2px;color:#f77462">*</span></span>
+          <textarea class="form-control" placeholder="写下你对宝贝的描述吧…" ng-model="description" style="background:#f7f3f2"></textarea>
+        </div>
+        <div class="input-group">
+          <span class="input-group-addon">商品图片</span>
+          <div class="img-container">
+             <div class="img">
+                <span class="glyphicon glyphicon-plus" aria-hidden="true" ng-click="upImage1()"></span>
+                <img/>
+             </div>
+             <div class="img">
+                <span class="glyphicon glyphicon-plus" aria-hidden="true" ng-click="upImage2()"></span>
+                <img/>
+             </div>
+          </div>
+        </div>
+        <div class="my-goods-add-line">
+        </div>
+        <div class="my-goods-add-sellers">
+          <div class="input-group">
+            <span class="input-group-addon" ng-if="myTag!=true">买家名字</span>
+            <span class="input-group-addon" ng-if="myTag==true">卖家名字</span>
+            <input type="text" class="form-control" ng-model="seller.username" style="border:none;border-bottom:1px solid #979797;border-radius:none;width:143px;background:#f7f3f2">
+          </div>
+          <div class="input-group">
+            <span class="input-group-addon">所在校区</span>
+            <select class="form-control" ng-model="seller.address" style="background:#f7f3f2">
+              <option value="1">思明</option>
+              <option value="2">海韵</option>
+              <option value="3">翔安</option>
+            </select>
+          </div>
+          <div class="input-group">
+            <span class="input-group-addon">联系电话</span>
+            <input type="text" class="form-control" ng-model="seller.phone" style="border:none;border-bottom:1px solid #979797;border-radius:none;width:143px;background:#f7f3f2">
+          </div>
+          <div class="input-group">
+            <span class="input-group-addon"><span style="color:#f7f3f2">我的</span>微信</span>
+            <input type="text" class="form-control" ng-model="seller.wechat" style="border:none;border-bottom:1px solid #979797;border-radius:none;width:143px;background:#f7f3f2">
+          </div>
+          <div class="input-group">
+            <span class="input-group-addon">匿名发布</span>
+             <lable class="radio-inline">
+               <input type="radio"  name="anonymity" value="1" ng-model="anonymity">
+               <span>是</span>
+             </lable>
+             <lable class="radio-inline">
+               <input type="radio" name="anonymity" value="0"  ng-model="anonymity" checked>
+               <span>否</span>
+             </lable>
+          </div>
+          <div class="my-goods-add-sure" ng-click="addSuccess()">
+            <div class="btn-r">发布</div>
+          </div>
+        </div>
+  </div>

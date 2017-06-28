@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+    .image{
+      margin-top:40px;
+      width:300px;
+      height:300px;
+      margin:0 auto;
+    }
+    .image img{
+      width:100%;
+      height:100%;
+    }
+    </style>
+    <script src="lib/jquery.min.js"></script>
+    <script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+    <script type="text/javascript">
+        var configData;
+        var urlString=window.location.href;
+        var urlStr=urlString.substring(22).split('#')[0];
+        $.get('http://test.novaxmu.cn/transaction/api/admin/Wechat',{url:urlStr},function(data){
+          configData=JSON.parse(data);
+          console.log(configData);
+          configData.appId=configData.appId.substring(1,configData.appId.length-1);
+          configData.nonceStr=configData.nonceStr.substring(1,configData.nonceStr.length-1);
+          configData.timestamp=configData.timestamp.substring(1,configData.timestamp.length-1);
+          configData.signature=configData.signature.substring(1,configData.signature.length-1);
+          wx.config({
+            debug:false,
+            appId:configData.appId,
+            timestamp:configData.timestamp,
+            nonceStr:configData.nonceStr,
+            signature:configData.signature,
+            jsApiList:[
+             'onMenuShareTimeline',
+             'chooseImage',
+             'previewImage',
+             'uploadImage'
+            ]
+          });
+          wx.ready(function(){
+             wx.checkJsApi({
+              jsApiList:
+              ['onMenuShareTimeline','chooseImage','previewImage','uploadImage'],
+              success:function(res){
+                console.log(res);
+              }
+             })
+          });
+      
+        });
+        var localIds;
+        function test(){
+            wx.chooseImage({
+            count: 1, // 默认9
+            sizeType: ['compressed'], // 可以指定是原图还是压缩图，默认二者都有
+            sourceType: ['album', 'camera'], // 可以指定来源是相册还是相机，默认二者都有
+            success: function (res) {
+                localIds = res.localIds; // 返回选定照片的本地ID列表，localId可以作为img标签的src属性显示图片
+                $('.image img').attr('src',localIds);
+                
+                
+            }
+          });
+        };
+        function upload(){
+          wx.uploadImage({
+              localId:localIds.toString(), // 需要上传的图片的本地ID，由chooseImage接口获得
+              isShowProgressTips:1, // 默认为1，显示进度提示
+              success: function (res) {
+                  var serverId = res.serverId; // 返回图片的服务器端ID
+                  alert(serverId);
+              },
+              fail:function(res){
+                alert("上传失败");
+                alert(res);
+              }
+          })
+        }
+    </script>
+</head>
+<body>
+    <div onclick="test()" style="text-align:center;font-size:50px;">点击此处选择图片上传</div>
+    <div class="image">
+      <img src=""/>
+    </div>
+    <div onclick="upload()" style="text-align:center;font-size:50px;">点击上传</div>
+
+</body>
+</html>

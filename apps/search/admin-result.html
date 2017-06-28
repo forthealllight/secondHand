@@ -1,0 +1,52 @@
+<img class="back-ground-img" ng-click="hideBig()" ng-src="{{
+  bigPic||'../images/default.jpg'
+  }}"/>
+<div class="img-load"><img src="../images/load.gif"/></div>
+ <header>
+          <div class="my-goods-head header-position" style="background:#f77462">
+             今日商品导览
+          </div>
+</header>
+<select class="form-control" ng-model="myCategory" ng-click="changeType()"style="background:#f7f3f2;width:80%;margin-top:10px;margin-left:10%;margin-bottom:10px;">
+  <option value="99">全部商品</option>
+  <option value="0">其他</option>
+  <option value="1">女生穿搭</option>
+  <option value="2">男生穿搭</option>
+  <option value="3">数码电器</option>
+  <option value="4">护肤彩妆</option>
+  <option value="5">书刊学品</option>
+  <option value="6">生活百货</option>
+  <option value="7">运动票券</option>
+</select>
+<div class="search-container">
+
+  <div class="right-panel" load-more style="margin-top:0">
+     <div class="right-panel-list clearfix" ng-repeat="goods in goodsList"  ng-if="goods.category==myCategory||myCategory==99">
+         <div class="header" style="padding:0">
+             <p class="name" style="margin:10px 0 0 10px">商品编号：XMU{{goods.commodityId}}</p>
+             <p class="time" style="margin:10px 0 0 10px;color:#333;font-size:14px;font-weight:bold">商品价格：¥{{goods.price}}</p>
+             <p class="time" style="margin:10px 0 0 10px;color:#333;font-size:14px;font-weight:bold">商品类型：
+                <span ng-if="goods.category==0">其他</span>
+                <span ng-if="goods.category==1">女生穿搭</span>
+                <span ng-if="goods.category==2">男生穿搭</span>
+                <span ng-if="goods.category==3">数码电器</span>
+                <span ng-if="goods.category==4">护肤彩妆</span>
+                <span ng-if="goods.category==5">书刊学品</span>
+                <span ng-if="goods.category==6">生活百货</span>
+                <span ng-if="goods.category==7">运动票券</span>
+             </p>
+         </div>
+         <div class="body">
+             <div class="desp">{{goods.description}}</div>
+             <div class="desp-picture clearfix" style="padding:0 20px;height:auto">
+                  <div class="picture-1 picture" ng-if="goods.pictureA!=null&&goods.pictureA!=''" style="width:100%;height:200px;padding-bottom:20px;">
+                     <img ng-src="{{goods.pictureA||'../images/default.jpg'}}" ng-click="showBig(goods.pictureA)">
+                  </div>
+                  <div class="picture-2 picture" ng-if="goods.pictureB!=null&&goods.pictureB!=''" style="width:100%;height:200px">
+                     <img ng-src="{{goods.pictureB||'../images/default.jpg'}}" ng-click="showBig(goods.pictureB)"/>
+                  </div>
+             </div>
+         </div>
+     </div>
+  </div>
+</div>

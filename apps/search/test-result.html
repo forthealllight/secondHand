@@ -1,0 +1,64 @@
+<img class="back-ground-img" ng-click="hideBig()" ng-src="{{
+  bigPic||'../images/default.jpg'
+  }}"/>
+<div class="img-load"><img src="../images/load.gif"/></div>
+ <header>
+          <div class="my-goods-head header-position">
+             今日商品导览
+          </div>
+</header>
+<div class="search-container">
+  <div class="right-panel" infinite-scroll="loadMore()" infinite-scroll-disable="{{loadTag}}" infinite-scroll-distance="1">
+     <div class="right-panel-list clearfix" ng-repeat="goods in goodsList">
+         <div class="header">
+             <div class="img-container" ng-if="goods.anonymity=='0'"><img ng-src="{{goods.user.headImgUrl}}"/></div>
+             <div class="img-container" ng-if="goods.anonymity=='1'"><img src="../images/anonymity.jpg"/></div>
+             <p class="name">{{goods.user.username}}</p>
+             <p class="time">{{goods.updateTime}}</p>
+             <div class="type-tag">
+               <span ng-if="goods.category=='0'">其他</span>
+               <span ng-if="goods.category=='1'">女生鞋服</span>
+               <span ng-if="goods.category=='2'">男生鞋服</span>
+               <span ng-if="goods.category=='3'">数码电器</span>
+               <span ng-if="goods.category=='4'">护肤彩妆</span>
+               <span ng-if="goods.category=='5'">书刊学品</span>
+               <span ng-if="goods.category=='6'">生活用品</span>
+               <span ng-if="goods.category=='7'">代步运动</span>
+               <span ng-if="goods.category=='8'">票券</span>
+               <span ng-if="goods.category=='9'">箱包</span>
+               <span ng-if="goods.category=='10'">食品</span>
+             </div>
+         </div>
+         <div class="body">
+             <div class="desp">{{goods.description}}</div>
+             <div class="desp-picture clearfix">
+                  <div class="picture-1 picture" ng-if="goods.pictureA!=null">
+                     <img ng-src="{{goods.pictureA||'../images/default.jpg'}}" ng-click="showBig(goods.pictureA)">
+                  </div>
+                  <div class="picture-2 picture" ng-if="goods.pictureB!=null">
+                     <img ng-src="{{goods.pictureB||'../images/default.jpg'}}" ng-click="showBig(goods.pictureB)"/>
+                  </div>
+             </div>
+         </div>
+         <div class="footer clearfix">
+             <div class="price">¥{{goods.price}}</div>
+             <div class="info">
+                 <div class="place">
+                    <span ng-if="goods.user.address==1">厦门大学思明校区</span>
+                    <span ng-if="goods.user.address==2">厦门大学海韵校区</span>
+                    <span ng-if="goods.user.address==3">厦门大学翔安校区</span>
+                 </div>
+                 <div class="phone">
+                    <div class="phone-cover" show-link>
+                            点此查看联系方式
+                    </div>
+                    {{goods.user.phone}}
+                 </div>
+             </div>
+             <div class="purchase" ng-click="collect(goods.commodityId)">收藏</div>
+         </div>
+     </div>
+  </div>
+</div>
+
+ 

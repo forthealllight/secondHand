@@ -1,0 +1,64 @@
+<div class="modify-container">
+     <div class="header">修改信息</div>
+     <div class="body">
+        <div class="input-group">
+          <span class="input-group-addon" >卖家昵称</span>
+          <input type="text" class="form-control" ng-model="user_name" style="border:none;border-bottom:1px solid #979797;border-radius:none;width:143px;background:#f7f3f2">
+        </div>
+        <div class="input-group" style="margin-top:15px;">
+          <span class="input-group-addon">所在校区</span>
+          <select class="form-control" ng-model="user_address" style="background:#f7f3f2;border-radius:2px">
+            <option value="1">思明校区</option>
+            <option value="2">海韵校区</option>
+            <option value="3">翔安校区</option>
+          </select>
+        </div>
+        <div class="input-group">
+          <span class="input-group-addon">联系电话</span>
+          <input type="text" class="form-control" ng-model="user_phone" style="border:none;border-bottom:1px solid #979797;border-radius:none;width:143px;background:#f7f3f2" placeholder="请输入手机号">
+        </div>
+        <div class="input-group">
+          <span class="input-group-addon"><span style="color:#f7f3f2">我的</span>微信</span>
+          <input type="text" class="form-control" ng-model="user_wechat" style="border:none;border-bottom:1px solid #979797;border-radius:none;width:143px;background:#f7f3f2" placeholder="请输入微信号">
+        </div>
+     </div>
+     <div class="footer">
+         <div class="sure" ng-click="updateInfos()" style="background:#6dc4dd">确定</div>
+         <div class="cancel" ng-click="hide()">取消</div>
+     </div>
+  </div>
+      <header>
+          <div class="my-user-info clearfix">
+              <div class="img-container">
+                 <img ng-src="{{now_headUrl}}"/>
+              </div>
+              <div class="info">
+                 <span class="name">{{now_name}}</span>
+                 <span class="id">(微信号{{now_wechat}})</span>
+              </div>
+              <div class="info">
+                 <span ng-if="now_address==1">厦门大学思明校区</span>
+                 <span ng-if="now_address==2">厦门大学海韵校区</span>
+                 <span ng-if="now_address==3">厦门大学翔安校区</span>
+              </div>
+              <div class="info">
+                 {{now_phone}}
+              </div>
+              <div class="modify" ng-click="modify()">
+                 修改
+              </div>
+          </div>
+          <div class="my-change-tag">
+              <ul class="clearfix">
+                <li change-my class="line active">
+                  <a ui-sref="list.myindex">我发布的<a>
+                </li>
+                <li change-my>
+                  <a ui-sref="list.mycollect">我收藏的<a>
+                </li>
+              </ul>
+          </div>
+      </header>
+   <div ui-view>
+
+   </div>

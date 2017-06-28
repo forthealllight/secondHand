@@ -1,0 +1,81 @@
+ <div class="img-load"><img src="../images/load.gif"/></div>
+ <header>
+    <div class="my-goods-add-header header-position">
+        编辑商品
+    </div>
+  </header>
+  <div class="my-goods-add-container">
+        <div class="input-group">
+          <span class="input-group-addon">商品类型</span>
+          <select class="form-control" ng-model="goods.category" style="background:#f7f3f2">
+            <option value="0">其他</option>
+            <option value="1">女生穿搭</option>
+            <option value="2">男生穿搭</option>
+            <option value="3">数码电器</option>
+            <option value="4">护肤彩妆</option>
+            <option value="5">书刊学品</option>
+            <option value="6">生活百货</option>
+            <option value="7">运动票券</option>
+          </select>
+        </div>
+        <div class="input-group">
+          <span class="input-group-addon">商品价格</span>
+          <input type="text" class="form-control" ng-model="goods.price" style="border:none;border-bottom:1px solid #979797;width:143px;background:#f7f3f2">
+        </div>
+        <div class="input-group" style="margin-top:20px;">
+          <span class="input-group-addon">商品描述</span>
+          <textarea class="form-control" placeholder="写下你对宝贝的描述吧…" ng-model="goods.description" style="background:#f7f3f2"></textarea>
+        </div>
+        <div class="input-group">
+          <span class="input-group-addon">商品图片</span>
+          <div class="img-container">
+             <div class="img">
+                <span class="glyphicon glyphicon-plus" aria-hidden="true" ng-click="upImage1()"></span>
+                <img ng-src="{{goods.pictureA}}"/>
+             </div>
+             <div class="img">
+                <span class="glyphicon glyphicon-plus" aria-hidden="true" ng-click="upImage2()"></span>
+                <img ng-src="{{goods.pictureB}}"/>
+             </div>
+          </div>
+        </div>
+        <div class="my-goods-add-line">
+        </div>
+        <div class="my-goods-add-sellers">
+          <div class="input-group">
+            <span class="input-group-addon">卖家名字</span>
+            <input type="text" class="form-control" ng-model="seller.username" style="border:none;border-bottom:1px solid #979797;width:143px;background:#f7f3f2">
+          </div>
+          <div class="input-group">
+            <span class="input-group-addon">所在校区</span>
+            <select class="form-control" ng-model="seller.address" style="background:#f7f3f2">
+              <option value="1">思明</option>
+              <option value="2">海韵</option>
+              <option value="3">翔安</option>
+            </select>
+          </div>
+          <div class="input-group">
+            <span class="input-group-addon">联系电话</span>
+            <input type="text" class="form-control" ng-model="seller.phone" style="border:none;border-bottom:1px solid #979797;width:143px;background:#f7f3f2">
+          </div>
+          <div class="input-group">
+            <span class="input-group-addon"><span style="color:#f7f3f2">我的</span>微信</span>
+            <input type="text" class="form-control" ng-model="seller.wechat" style="border:none;border-bottom:1px solid #979797;width:143px;background:#f7f3f2">
+          </div>
+          <div class="input-group">
+            <span class="input-group-addon">匿名发布</span>
+             <lable class="radio-inline">
+               <input type="radio"  name="anonymity" value="1" ng-model="goods.anonymity">
+               <span>是</span>
+             </lable>
+             <lable class="radio-inline">
+               <input type="radio" name="anonymity" value="0"  ng-model="goods.anonymity">
+               <span>否</span>
+             </lable>
+          </div>
+          <div class="my-goods-add-sure" >
+            <div class="btn-m" ng-click="addSuccess()">修改</div>
+            <div class="btn-m" ng-click="goBack()" style="background:#8a909e">返回</div>
+          </div>
+        </div>
+  </div>

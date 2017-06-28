@@ -1,0 +1,82 @@
+ <div class="my-body-container">
+          <ul class="my-goods-list">
+             <li class="goods clearfix" ng-repeat="goods in onsells">
+                <div class="header">
+                   <div class="img-container">
+                      <img ng-src="{{goods.pictureA}}"/>
+                   </div>
+                   <div class="time">
+                         {{goods.updateTime}}&nbsp;{{goods.updateMini}}
+                   </div>
+                   <div class="desp">
+                       {{goods.description}}
+                   </div>
+                   <div class="state" ng-class="{active:goods.business==0,buy:goods.business==1}" ng-if="goods.business==0">
+                        待售
+                   </div>
+                   <div class="state" ng-class="{active:goods.business==0,buy:goods.business==1}" ng-if="goods.business==1">
+                        求购
+                   </div>
+                   <!-- <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> -->
+                </div>
+                <div class="info">
+                     <div class="price">
+                         ¥{{goods.price}}
+                     </div>
+                     <div class="type">
+                         <span ng-if="goods.category=='0'">其他</span>
+                         <span ng-if="goods.category=='1'">女生鞋服</span>
+                         <span ng-if="goods.category=='2'">男生鞋服</span>
+                         <span ng-if="goods.category=='3'">数码电器</span>
+                         <span ng-if="goods.category=='4'">护肤彩妆</span>
+                         <span ng-if="goods.category=='5'">书刊学品</span>
+                         <span ng-if="goods.category=='6'">生活用品</span>
+                         <span ng-if="goods.category=='7'">代步运动</span>
+                         <span ng-if="goods.category=='8'">票券</span>
+                         <span ng-if="goods.category=='9'">箱包</span>
+                         <span ng-if="goods.category=='10'">食品</span>
+                     </div>
+                     <div class="carriage purchase" ng-click="undercarriage(goods.commodityId)">下架</div>
+                     <div class="purchase" ng-click="goEdit(goods.commodityId)">编辑</div>
+                </div>
+
+             </li>
+             <li class="goods clearfix" ng-repeat="goods in downsells">
+                <div class="header">
+                   <div class="img-container">
+                       <img ng-src="{{goods.pictureA}}"/>
+                   </div>
+                   <div class="time">
+                        {{goods.updateTime}}&nbsp;{{goods.updateMini}}
+                   </div>
+                   <div class="desp">
+                       {{goods.description}}
+                   </div>
+                   <div class="state disable">
+                       已售
+                   </div>
+                  <!--  <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> -->
+                </div>
+                <div class="info">
+                     <div class="price">
+                         ¥{{goods.price}}
+                     </div>
+                     <div class="type">
+                         <span ng-if="goods.category=='0'">其他</span>
+                         <span ng-if="goods.category=='1'">女生鞋服</span>
+                         <span ng-if="goods.category=='2'">男生鞋服</span>
+                         <span ng-if="goods.category=='3'">数码电器</span>
+                         <span ng-if="goods.category=='4'">护肤彩妆</span>
+                         <span ng-if="goods.category=='5'">书刊学品</span>
+                         <span ng-if="goods.category=='6'">生活用品</span>
+                         <span ng-if="goods.category=='7'">代步运动</span>
+                         <span ng-if="goods.category=='8'">票券</span>
+                         <span ng-if="goods.category=='9'">箱包</span>
+                         <span ng-if="goods.category=='10'">食品</span>
+                     </div>
+                    <div class="purchase carriage" ng-click="upcarriage(goods.commodityId)">上架</div>
+                    <div class="purchase" ng-click="unsell()">编辑</div>
+                </div>
+             </li>
+          </ul>
+      </div>

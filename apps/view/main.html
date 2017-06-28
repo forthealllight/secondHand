@@ -1,0 +1,175 @@
+<div class="search-panel">
+  <div class="title">
+    <div class="type" change-business>
+      淘二手
+    </div>
+    <div class="type no-active" change-business>
+      求购
+    </div>
+  </div>
+  <div class="search-input">
+    <input  type="text"  ng-model="description" style="text-indent:40px" />
+    <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+  </div>
+  <div class="line">
+    分类
+  </div>
+  <div class="type-container">
+    <div class="goods-type" change-catalog>其他</div>
+    <div class="goods-type" change-catalog style="margin-right:10px">女生穿搭</div>
+    <div class="goods-type" change-catalog>男生穿搭</div>
+    <div class="goods-type" change-catalog style="margin-right:10px">数码电器</div>
+    <div class="goods-type" change-catalog>护肤彩妆</div>
+    <div class="goods-type" change-catalog style="margin-right:10px">书刊学品</div>
+    <div class="goods-type" change-catalog>生活百货</div>
+    <div class="goods-type" change-catalog style="margin-right:10px">运动票券</div>
+  </div>
+  <div class="line">
+    校区
+  </div>
+  <div class="type-container">
+    <div class="place-type" change-address>思明</div>
+    <div class="place-type" change-address style="margin:0 5px">海韵</div>
+    <div class="place-type" change-address>翔安</div>
+  </div>
+  <div class="go">
+    <div class="go-edit" show-search ng-click="pushGoods()">GO</div>
+  </div>
+  <div class="footer">
+    <span>Powered by Nova Studio</span>
+  </div>
+</div>
+<div class="back-ground-container" ng-click="hideBig()">
+  <img class="back-ground-img" ng-click="hideBig()" ng-src="{{
+    bigPic||'../images/default.jpg'
+    }}"/>
+</div>
+<div class="img-load"><img src="../images/load.gif"/></div>
+<div class="search-type" show-search>
+  <i class="iconfont icon-caidan" style="font-size:25px"></i>
+</div>
+
+<!-- <div class="body-container clearfix" show-search infinite-scroll="loadMore()" infinite-scroll-disable="{{loadTag}}" infinite-scroll-distance='1'> -->
+<div class="body-container clearfix" show-search load-more style="transform:translate3d(0,0,0);">
+  <header show-search>
+    <!--  <div class="header-container">
+            <div class="header-logo">
+                <img src="../images/logo.png"/>
+            </div>
+            <div class="header-search-bar">
+                <input type="text" placeholder="搜索你想要的" ng-keyup="searchResult($event)" ng-model="searchKey"/>
+                <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+            </div>
+       </div> 注释掉这部分-->
+    <div class="scroll-container" auto-scroll>
+      <ul class="scroll-infos clearfix">
+        <li index="0">
+          <!--  <div class="title">出售六神花露水,宝宝牌专用哦！</div> -->
+          <div class="picture">
+            <img src="../images/8.jpg"/>
+          </div>
+        </li>
+        <li index="1">
+          <!--  <div class="title">出二手自行车~</div> -->
+          <div class="picture">
+            <img src="../images/5.jpg"/>
+          </div>
+        </li>
+        <li index="2">
+          <!--  <div class="title">出越野汽车,SUV限量版~</div> -->
+          <div class="picture">
+            <img src="../images/6.jpg"/>
+          </div>
+        </li>
+        <li index="3">
+          <!-- <div class="title">出售玩具熊，每只只要一毛钱~</div> -->
+          <div class="picture">
+            <img src="../images/7.jpg"/>
+          </div>
+        </li>
+        <li index="4">
+          <!--  <div class="title">出售六神花露水,宝宝牌专用哦！</div> -->
+          <div class="picture">
+            <img src="../images/8.jpg"/>
+          </div>
+        </li>
+        <li index="5">
+          <!--   <div class="title">出二手自行车~</div> -->
+          <div class="picture">
+            <img src="../images/5.jpg"/>
+          </div>
+        </li>
+      </ul>
+      <ul class="tab">
+        <li class="active" index="1" my-scroll></li>
+        <li index="2" my-scroll></li>
+        <li index="3" my-scroll></li>
+        <li index="4" my-scroll></li>
+      </ul>
+    </div>
+  </header>
+  <!--  <div class="no-goods-tip">暂无此类商品</div> -->
+  <div style="padding:0 5px">
+    <div class="right-panel-list clearfix" ng-repeat="goods in goodsList" ng-class="{sell:goods.business==0}">
+      <div class="header">
+        <div class="img-container" ng-if="goods.anonymity=='0'"><img ng-src="{{goods.user.headImgUrl}}"/></div>
+        <div class="img-container" ng-if="goods.anonymity=='1'"><img src="../images/anonymity.jpg"/></div>
+        <p class="name">{{goods.user.username}}</p>
+        <p class="time">{{goods.updateTime}}&nbsp;{{goods.updateMini}}</p>
+        <div class="type-tag">
+          <span ng-if="goods.category=='0'">其他</span>
+          <span ng-if="goods.category=='1'">女生穿搭</span>
+          <span ng-if="goods.category=='2'">男生穿搭</span>
+          <span ng-if="goods.category=='3'">数码电器</span>
+          <span ng-if="goods.category=='4'">护肤彩妆</span>
+          <span ng-if="goods.category=='5'">书刊学品</span>
+          <span ng-if="goods.category=='6'">生活百货</span>
+          <span ng-if="goods.category=='7'">运动票券</span>
+        </div>
+        <div class="type-tag ask-for" ng-if="goods.business==1">
+          求购
+        </div>
+        <div class="collect" ng-click="collect(goods.commodityId,goods.isCollect)" ng-class="{active:goods.isCollect==1}" collect-goods>
+          <i class="iconfont icon-wujiaoxing" style="font-size:25px"></i>
+        </div>
+      </div>
+      <div class="body">
+        <div class="desp">{{goods.description}}</div>
+        <div class="desp-picture clearfix">
+          <div class="picture-1 picture" ng-if="goods.pictureA!=null&&goods.pictureA!=''">
+            <img ng-src="{{goods.pictureA||'../images/default.jpg'}}" ng-click="showBig(goods.pictureA)">
+          </div>
+          <div class="picture-2 picture" ng-if="goods.pictureB!=null&&goods.pictureB!=''">
+            <img ng-src="{{goods.pictureB||'../images/default.jpg'}}" ng-click="showBig(goods.pictureB)"/>
+          </div>
+        </div>
+      </div>
+      <div class="footer clearfix">
+        <div class="price">¥{{goods.price}}
+        </div>
+        <div class="info">
+          <div class="place">
+            <span ng-if="goods.user.address==1">厦门大学思明校区</span>
+            <span ng-if="goods.user.address==2">厦门大学海韵校区</span>
+            <span ng-if="goods.user.address==3">厦门大学翔安校区</span>
+          </div>
+          <!--   <div class="phone">
+                         <div class="phone-cover" show-link>
+                            点此查看联系方式
+                         </div>
+
+                         {{goods.user.phone}}
+                       </div> -->
+        </div>
+        <div class="phone">
+          <div class="phone-cover" show-link ng-class="{sell:goods.business==0}">
+            联系方式
+          </div>
+          <span>手机:{{goods.user.phone}}</span></br>
+          <span>微信:{{goods.user.wechat}}</span>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

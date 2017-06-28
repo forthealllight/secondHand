@@ -1,0 +1,1393 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  overflow-y: scroll;
+  height: auto;
+  padding-bottom: 80px;
+}
+
+
+/*.header-container{
+    position:fixed;
+    top:0;
+    left:0;
+    z-index:1001;
+    width:100%;
+    height:46px;
+    background:#9F0202;
+}*/
+
+.header-container .header-logo {
+  float: left;
+  width: 29%;
+  height: 46px;
+}
+
+.header-container .header-logo img {
+  height: 100%;
+  width: 100%;
+}
+
+.header-container .header-search-bar {
+  position: relative;
+  float: left;
+  width: 65%;
+  height: 46px;
+  margin-left: 3%;
+}
+
+.header-container .header-search-bar span {
+  position: absolute;
+  top: 16px;
+  left: 10px;
+  color: #898989;
+  font-size: 16px;
+}
+
+.header-container .header-search-bar input {
+  width: 100%;
+  height: 32px;
+  margin-top: 7px;
+  border: none;
+  border-radius: 8px;
+  text-indent: 30px;
+  font-family: "微软雅黑";
+}
+
+
+/*CSS3实现input的一些样式*/
+
+.header-container .header-search-bar input::-webkit-input-placeholder {
+  font-size: #898989;
+  font-family: "微软雅黑";
+  font-size: 16px;
+}
+
+.scroll-container .title {
+  height: 40px;
+  line-height: 40px;
+  font-family: "微软雅黑";
+  color: white;
+  background: #444;
+  text-align: center;
+}
+
+
+/*全局清楚浮动类*/
+
+.clearfix {
+  zoom: 1;
+}
+
+.clearfix:after {
+  display: block;
+  clear: both;
+  content: "";
+  visibility: hidden;
+  height: 0;
+}
+
+.scroll-container {
+  position: relative;
+  width: 100%;
+  height: 180px;
+  overflow: hidden;
+  box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 0.12), 0px 1px 1px 0px rgba(0, 0, 0, 0.12);
+}
+
+.scroll-container .scroll-infos {
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 600%;
+}
+
+.search-type {
+  width: 56px;
+  height: 56px;
+  border-radius: 56px;
+  line-height: 56px;
+  text-align: center;
+  background: #F77462;
+  color: white;
+  position: fixed;
+  top: 3px;
+  right: 3px;
+  z-index: 9999;
+  background: #f77462;
+  box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.12), 0px 2px 2px 0px rgba(0, 0, 0, 0.12);
+}
+
+.scroll-container .scroll-infos li {
+  width: 16.66667%;
+  float: left;
+  list-style-type: none;
+}
+
+.scroll-container .picture {
+  height: 180px;
+  background: #898989;
+}
+
+.scroll-container .picture img {
+  width: 100%;
+  height: 100%;
+}
+
+.scroll-container .tab {
+  position: absolute;
+  left: 40%;
+  bottom: 0;
+}
+
+.scroll-container .tab li {
+  list-style-type: none;
+  float: left;
+  height: 10px;
+  width: 10px;
+  border-radius: 10px;
+  margin-right: 5px;
+  border: 2px solid #444;
+}
+
+.scroll-container .tab .active {
+  background: #444;
+}
+
+.body-container {
+  height: 720px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+.body-container .left-panel-nav {
+  width: 19%;
+  height: 350px;
+  float: left;
+}
+
+.body-container .left-panel-nav .tag {
+  width: 100%;
+  height: 30px;
+  line-height: 30px;
+  color: white;
+  font-family: "微软雅黑";
+  text-align: center;
+  background: #9F0202;
+}
+
+.body-container .left-panel-nav .nav li {
+  width: 100%;
+  height: 25px;
+  line-height: 25px;
+  color: #9F0220;
+  font-family: "微软雅黑";
+  text-align: center;
+  border: 1px solid #9F0202;
+  margin-top: 5px;
+  border-radius: 5px;
+  font-size: 10px;
+  font-weight: bold;
+}
+
+.body-container .left-panel-nav .nav .active {
+  color: white;
+  background: #9F0202;
+}
+
+.body-container .right-panel {
+  height: 720px;
+  overflow-y: scroll;
+}
+
+.body-container .right-panel .no-goods-tip {
+  text-align: center;
+  font-family: "微软雅黑";
+  font-size: 16px;
+  margin-top: 10px;
+  color: #9F0202;
+  display: none;
+}
+
+.body-container .right-panel-list {
+  width: 100%;
+  min-height: 230px;
+  height: auto;
+  float: right;
+  margin-top: 10px;
+  box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 0.12), 0px 1px 1px 0px rgba(0, 0, 0, 0.12);
+  border-left: 10px solid #8AD0E4;
+  background: #ffffff;
+  border-radius: 2px;
+}
+.body-container .right-panel-list.sell{
+  border-left:10px solid #F76F5D;
+}
+.body-container .right-panel-list .header {
+  width: 95%;
+  margin-left: 2.5%;
+  position: relative;
+  height: 60px;
+  padding-top: 8px;
+  padding-left: 5px;
+  font-family: "微软雅黑";
+  border-bottom: 1px solid rgba(224, 224, 224, 0.5);
+}
+
+.body-container .right-panel-list .header .img-container {
+  width: 44px;
+  height: 44px;
+  border-radius: 44px;
+  float: left;
+  overflow: hidden;
+}
+
+.body-container .right-panel-list .header .img-container img {
+  width: 100%;
+  height: 100%;
+}
+
+.body-container .right-panel-list .header .name {
+  font-weight: bold;
+  margin-left: 55px;
+  margin-bottom: 0;
+  margin-top: 5px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  width:50px;
+}
+
+.body-container .right-panel-list .header .time {
+  font-size: 10px;
+  margin-left: 55px;
+  margin-top: 5px;
+  color: #B3B7BF;
+  word-spacing: 3px;
+}
+
+.body-container .right-panel-list .header .type-tag {
+  position: absolute;
+  right: 110px;
+  top: 18px;
+  line-height: 24px;
+  text-align: center;
+  width: 62px;
+  background: #E0E0E0;
+  font-size: 10px;
+  border-radius: 100px;
+  color: white;
+}
+
+.body-container .right-panel-list .header .ask-for {
+  right: 40px;
+  color: #6DC4DD;
+  border: 1px solid #6DC4DD;
+  background: white;
+}
+
+.body-container .right-panel-list .header .collect {
+  position: absolute;
+  right: 0;
+  top: 0px;
+  height: 50px;
+  width: 50px;
+  text-align: right;
+  color: #E0E0E0;
+}
+.body-container .right-panel-list .header .collect.active{
+  color:#f77462
+}
+
+.body-container .right-panel-list .body {
+  min-height: 120px;
+  height: auto;
+  border-bottom: 1px solid rgba(224, 224, 224, 0.5);
+}
+
+.body-container .right-panel-list .body .desp {
+  padding: 2px 8px;
+  min-height: 20px;
+  height: auto;
+  font-family: "微软雅黑";
+  word-break: break-all;
+  margin-top: 10px;
+}
+
+.body-container .right-panel-list .body .desp-picture {
+  height: auto;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.body-container .right-panel-list .body .desp-picture .picture {
+  width: 90px;
+  height: 90px;
+  display: inline-block;
+  margin-right: 10px;
+  vertical-align: middle;
+  overflow: hidden;
+}
+
+.body-container .right-panel-list .body .desp-picture .picture img {
+  width: 100%;
+  height: 100%;
+}
+
+.body-container .right-panel-list .footer {
+  height: 50px;
+}
+
+.body-container .right-panel-list .footer .price {
+  height: 30px;
+  width: 70px;
+  line-height: 30px;
+  float: left;
+  vertical-align: middle;
+  text-align: center;
+  color: #F76F5D;
+  border-right: 1px solid rgba(224, 224, 224, 0.5);
+  font-size: 20px;
+  margin-top: 10px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  padding-left: 5px;
+  margin-left: 5px;
+}
+
+.body-container .right-panel-list .footer .info {
+  float: left;
+  height: 50px;
+  width: auto;
+  font-size: 10px;
+  padding-top: 5px;
+  overflow: hidden;
+  margin-left:5px;
+  font-family: "微软雅黑";
+  padding-left: 10px;
+}
+
+.body-container .right-panel-list .footer .place {
+  height: 40px;
+  line-height: 40px;
+}
+
+.body-container .right-panel-list .footer .phone {
+  position: relative;
+  float: right;
+  margin-top: 8px;
+  font-size:10px;
+  margin-right:8px;
+}
+
+.body-container .right-panel-list .footer .phone .phone-cover {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 30px;
+  line-height: 30px;
+  width: 120px;
+  background: #6DC4DD;
+  color: white;
+  font-family: '微软雅黑';
+  text-align: center;
+  border-radius:3px;
+}
+.body-container .right-panel-list .footer .phone .phone-cover span{
+  width:120px;
+  display: inline-block;
+}
+.body-container .right-panel-list .footer .phone .phone-cover.sell{
+  background:#F76F5D;
+}
+
+.body-container .right-panel-list .footer .purchase {
+  width: 50px;
+  line-height: 30px;
+  float: right;
+  background: red;
+  background: #9F0202;
+  border-radius: 10px;
+  color: white;
+  font-family: "微软雅黑";
+  vertical-align: middle;
+  text-align: center;
+  margin-top: 10px;
+  margin-right: 10px;
+}
+
+.footer-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 46px;
+  background: white;
+  color: white;
+  font-family: "微软雅黑";
+  z-index: 11111;
+  box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.12), 0px 2px 2px 0px rgba(0, 0, 0, 0.12);
+}
+
+.footer-bar .active {
+  color: #f77462;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.footer-bar .index {
+  width: 50%;
+  height: 46px;
+  float: left;
+  text-align: right;
+  margin-top: 5px;
+  display: inline-block;
+}
+
+.footer-bar .index .detail {
+  font-size: 14px;
+}
+
+.footer-bar a {
+  list-style-type: none;
+  color: #8A909E;
+}
+
+.footer-bar .my {
+  width: 50%;
+  height: 46px;
+  float: left;
+  text-align: center;
+  margin-top: 5px;
+}
+
+.footer-bar .my .detail {
+  font-size: 14px;
+}
+
+.footer-bar .add {
+  position: absolute;
+  top: -20px;
+  left: 10px;
+  width: 56px;
+  height: 56px;
+  border-radius: 56px;
+  line-height: 50px;
+  background: #F77462;
+  text-align: center;
+  box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.12);
+  border: 3px solid white;
+}
+
+.footer-bar .add span {}
+
+.my-goods-head {
+  height: 46px;
+  line-height: 46px;
+  background: #9E0202;
+  text-align: center;
+  color: white;
+  font-family: "微软雅黑";
+  font-size: 18px;
+  width: 100%;
+}
+
+.my-user-info {
+  position: relative;
+  padding: 10px 0 10px 5px;
+  background: #ffffff;
+  box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 0.12), 0px 1px 1px 0px rgba(0, 0, 0, 0.12);
+  height: 88px;
+}
+
+.my-user-info .img-container {
+  width: 62px;
+  height: 62px;
+  border-radius: 62px;
+  float: left;
+  overflow: hidden;
+}
+
+.my-user-info .img-container img {
+  width: 100%;
+  height: 100%;
+}
+
+.my-user-info .info .name {
+  font-family: "Roboto-Medium";
+  font-size: 16px;
+  color: #5d5d5d;
+  letter-spacing: 0px;
+  line-height: 24px;
+  text-align: center;
+}
+
+.my-user-info .info .id {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  opacity: 0.69;
+  font-family: "PingFangSC-Regular";
+  font-size: 14px;
+  color: #8a909e;
+  line-height: 24px;
+  text-align: center;
+}
+
+.my-user-info .info {
+  margin-left: 65px;
+  margin-bottom: 2px;
+  opacity: 0.69;
+  font-family: "PingFangSC-Regular";
+  font-size: 14px;
+  color: #8a909e;
+}
+
+.my-user-info .modify {
+  position: absolute;
+  bottom: 17px;
+  right: 7px;
+  line-height: 32px;
+  text-align: center;
+  border: 1px solid #f77462;
+  border-radius: 2px;
+  width: 69px;
+  font-family: "PingFangSC-Regular";
+  font-size: 14px;
+  color: #f77462;
+  letter-spacing: 0.5px;
+}
+
+.my-change-tag {
+  height: 40px;
+  opacity: 0.8;
+  background: #ffffff;
+  box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 0.12), 0px 1px 1px 0px rgba(0, 0, 0, 0.12);
+}
+
+.my-change-tag ul li {
+  list-style-type: none;
+  width: 49%;
+  height: 40px;
+  float: left;
+  line-height: 40px;
+  text-align: center;
+  font-family: "PingFangSC-Medium";
+  font-size: 16px;
+}
+
+.my-change-tag ul li a {
+  list-style-type: none;
+  text-decoration: none;
+  color: black;
+}
+
+.my-change-tag ul .active {
+  border-bottom: 2px solid #6DC4DD;
+}
+
+.my-change-tag ul .active a {
+  color: #6dc4dd;
+}
+
+.my-body-container {
+  padding: 0 8px;
+  overflow-y: scroll;
+  height:auto;
+}
+
+.my-body-container .my-goods-list .goods {
+  list-style-type: none;
+  height: 175px;
+  background: #ffffff;
+  border-radius: 2px;
+  margin-top: 5px;
+  color: #3C3C3C;
+  box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.08), 0px 2px 2px 0px rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(224, 224, 224, 0.5);
+}
+
+.my-body-container .my-goods-list .goods .header {
+  position: relative;
+  height: 120px;
+  border-bottom: 1px solid rgba(224, 224, 224, 0.5);
+  padding: 8px;
+  font-family: "微软雅黑"
+}
+
+.my-body-container .my-goods-list .goods .header .img-container {
+  width: 105px;
+  height: 105px;
+  background: #898989;
+  float: left;
+}
+
+.my-body-container .my-goods-list .goods .header .img-container img {
+  width: 100%;
+  height: 100%;
+}
+
+.my-body-container .my-goods-list .goods .header .time {
+  margin-left: 110px;
+  opacity: 0.69;
+  font-family: "Roboto-Regular";
+  font-size: 14px;
+  color: #8a909e;
+}
+
+.my-body-container .my-goods-list .goods .header .desp {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  margin-left: 110px;
+  margin-top: 15px;
+  padding-right: 20px;
+  font-family: "Roboto-Regular";
+  font-size: 14px;
+  color: #5d5d5d;
+}
+
+.my-body-container .my-goods-list .goods .header .state {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 57px;
+  border: 1px dashed #000;
+  border-radius: 2px;
+  line-height: 30px;
+  text-align: center;
+}
+
+.my-body-container .my-goods-list .goods .header .active {
+  color: #f77462;
+  border-color: #f77462;
+}
+.my-body-container .my-goods-list .goods .header .buy{
+  color:#6DC4DD;
+  border-color:#6DC4DD;
+}
+
+
+.my-body-container .my-goods-list .goods .header .disable {
+  color: #B8B8B8;
+  border-color: #B8B8B8;
+}
+
+.my-body-container .my-goods-list .goods .header .glyphicon-chevron-right {
+  position: absolute;
+  top: 40px;
+  right: 8px;
+  font-size: 22px;
+}
+
+.my-body-container .my-goods-list .goods .info {
+  height: 55px;
+  line-height: 55px;
+  font-family: "微软雅黑";
+}
+
+.my-body-container .my-goods-list .goods .info .price {
+  width: 56px;
+  height: 26px;
+  line-height: 26px;
+  border-right: 1px solid rgba(224, 224, 224, 0.5);
+  display: inline-block;
+  vertical-align: middle;
+  text-align: left;
+  margin-left: 8px;
+  color: #f77462;
+  font-size: 18px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.my-body-container .my-goods-list .goods .info .purchase {
+  line-height: 36px;
+  float: right;
+  background: #9F0202;
+  border-radius: 10px;
+  color: white;
+  vertical-align: middle;
+  text-align: center;
+  margin-right: 10px;
+  margin-top: 10px;
+  background: #6dc4dd;
+  border-radius: 2px;
+  width: 70px;
+  height: 36px;
+  font-family: "PingFangSC-Light";
+  font-size: 14px;
+  color: #ffffff;
+  letter-spacing: 0.5px;
+}
+
+.my-body-container .my-goods-list .goods .info .carriage {
+  background: #8a909e;
+}
+
+.my-body-container .my-goods-list .goods .info .type {
+  display: inline-block;
+  font-size: 12px;
+  margin-left: 8px;
+  color: #9F0202;
+}
+
+.my-body-container .my-goods-list .goods .info .type span {
+  display: inline-block;
+  background: #e0e0e0;
+  border: 1px solid #e0e0e0;
+  border-radius: 100px;
+  width: 60px;
+  line-height: 22px;
+  font-family: "PingFangSC-Regular";
+  font-size: 10px;
+  color: #f8f9fb;
+  text-align: center;
+}
+
+.my-body-container .my-goods-list .goods .info .operate {
+  display: inline-block;
+  float: right;
+  margin-right: 8px;
+}
+
+.my-body-container .my-goods-list .goods .info .operate button, .my-body-container .my-goods-list .goods .info .operate a {
+  width: 60px;
+  height: 30px;
+  background: #9F0202;
+  color: white;
+  font-family: "微软雅黑";
+}
+
+.body-container .title {
+  height: 20px;
+  line-height: 30px;
+  opacity: 0.64;
+  font-family: "PingFangSC-Light";
+  font-size: 13px;
+  color: #adb1bb;
+  text-align: center;
+}
+
+.my-goods-add-header {
+  height: 50px;
+  line-height: 50px;
+  font-family: "PingFangSC-Ultralight";
+  font-size: 36px;
+  color: #f77462;
+  text-align: center;
+  width: 100%;
+  opacity: 0.89;
+  background: #f7f3f2;
+}
+
+.my-goods-add-header .title {
+  width: 50%;
+  height: 38px;
+  display: inline-block;
+  float: left;
+  opacity: 0.74;
+  font-family: "PingFangSC-Regular";
+  font-size: 36px;
+  color: #737171;
+  text-align: center;
+  line-height: 38px;
+  margin-top: 6px;
+}
+
+.my-goods-add-header .title.active {
+  color: #f77462;
+}
+
+.my-goods-add-container {
+  padding: 10px 20px 0 20px;
+  overflow-y: scroll;
+  opacity: 0.89;
+  background: #f7f3f2;
+}
+
+.my-goods-add-container .input-group {
+  margin-bottom: 15px;
+}
+
+.my-goods-add-container .input-group span {
+  border: none;
+  background: none;
+  font-family: "PingFangSC-Regular";
+  font-size: 16px;
+  color: #000000;
+  letter-spacing: 0px;
+  text-align: left;
+}
+
+.my-goods-add-container .input-group .form-control {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  border: 1px solid #979797;
+  font-family: "PingFangSC-Light";
+  font-size: 14px;
+  color: #737171;
+  text-align: left;
+}
+
+.my-goods-add-container .input-group textarea {
+  resize: none;
+  height: 79px;
+}
+
+.my-goods-add-container .input-group textarea::-webkit-input-placeholder {
+  font-family: PingFangSC-Light;
+  font-size: 14px;
+  color: #737171;
+}
+
+.my-goods-add-container .input-group .img {
+  border: 1px dashed #979797;
+  width: 66px;
+  height: 66px;
+  line-height: 66px;
+  text-align: center;
+  display: inline-block;
+  position: relative;
+}
+
+.my-goods-add-container .input-group .img span {
+  font-size: 60px;
+  color: #575757;
+  z-index: 1001;
+}
+
+.my-goods-add-container .input-group .img img {
+  position: absolute;
+  width: 66px;
+  height: 66px;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  border: none;
+}
+
+.my-goods-add-line {
+  height: 0;
+}
+
+.my-goods-add-sellers {
+  margin-top: 10px;
+  font-family: "PingFangSC-Regular";
+  font-size: 16px;
+  color: #000000;
+}
+
+.my-goods-add-sellers .radio-inline input {
+  width: 15px;
+  height: 15px;
+}
+
+.my-goods-add-sellers .radio-inline {
+  margin-right: 20px;
+}
+
+.my-goods-add-sure {
+  height: 50px;
+  margin-top: 20px;
+  text-align: center;
+  line-height: 50px;
+}
+
+.my-goods-add-sure .btn-r {
+  display: inline-block;
+  background: #6dc4dd;
+  box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.08), 0px 2px 2px 0px rgba(0, 0, 0, 0.08);
+  border-radius: 2px;
+  width: 70px;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  font-family: "PingFangSC-Regular";
+  font-size: 14px;
+  color: #ffffff;
+}
+
+.my-goods-add-sure .btn-m {
+  border: none;
+  color: white;
+  background: #6dc4dd;
+  box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.08), 0px 2px 2px 0px rgba(0, 0, 0, 0.08);
+  border-radius: 2px;
+  width: 70px;
+  height: 40px;
+  line-height: 40px;
+  display: inline-block;
+  font-family: "PingFangSC-Regular";
+  font-size: 14px;
+  color: #ffffff;
+}
+
+.active {
+  color: #9F0202;
+}
+
+.tabs-container {
+  position: relative;
+}
+
+.tip-body {
+  position: fixed;
+  top: 60%;
+  left: 50%;
+  width: 120px;
+  height: 40px;
+  line-height: 40px;
+  color: white;
+  text-align: center;
+  border-radius: 10px;
+  margin-left: -50px;
+  margin-top: -50px;
+  background: #F76F5D;
+  font-family: "微软雅黑";
+  font-size: 16px;
+  z-index: 9999;
+}
+
+.back-ground {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: black;
+  opacity: 0.5;
+  z-index: 1002;
+}
+
+.back-ground-img {
+  width:100%;
+  height:auto;
+  display: none;
+  z-index:10041111;
+}
+.back-ground-container{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  z-index:10031111;
+  background: black;
+  display: none;
+}
+.modify-container {
+  position: fixed;
+  width: 100%;
+  height: 90%;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  display: none;
+  padding: 0 18px;
+  opacity: 0.89;
+  background: #f7f3f2;
+}
+
+.modify-container .header {
+  opacity: 0.74;
+  font-family: "PingFangSC-Regular";
+  font-size: 36px;
+  color: #f77462;
+  height: 50px;
+  line-height: 50px;
+  text-align: left;
+}
+
+.modify-container .body .input-group {
+  margin-top: 10px;
+}
+
+.modify-container .body .input-group span {
+  border: none;
+  background: none;
+  font-family: "PingFangSC-Regular";
+  font-size: 16px;
+  color: #000000;
+}
+
+.modify-container .body {
+  padding: 5px 10px 5px 0;
+}
+
+.modify-container .body .input-group .form-control {
+  color: #898989;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.modify-container .footer {
+  text-align: center;
+  position: absolute;
+  bottom: 21px;
+  right: 12px;
+}
+
+.modify-container .footer div {
+  line-height: 40px;
+  text-align: center;
+  display: inline-block;
+  margin-left: 8px;
+  background: #8a909e;
+  box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.08), 0px 2px 2px 0px rgba(0, 0, 0, 0.08);
+  border-radius: 2px;
+  width: 70px;
+  height: 40px;
+  font-family: "PingFangSC-Regular";
+  font-size: 14px;
+  color: #ffffff;
+}
+
+.search-container .right-panel {
+  height: 600px;
+  overflow-y: scroll;
+  margin-top: 50px;
+  padding: 0 10px;
+}
+
+.search-container .right-panel .no-search {
+  font-family: '微软雅黑';
+  font-size: 20px;
+  text-align: center;
+  display: none;
+}
+
+.search-container .right-panel-list {
+  width: 100%;
+  min-height: 230px;
+  height: auto;
+  box-shadow: 0 0 10px #444;
+  border-radius: 5px;
+  float: right;
+  margin-top: 5px;
+}
+
+.search-container .right-panel-list .header {
+  position: relative;
+  height: 90px;
+  border-bottom: 2px solid #D0D0D1;
+  padding-top: 5px;
+  padding-left: 5px;
+  font-family: "微软雅黑"
+}
+
+.search-container .right-panel-list .header .img-container {
+  width: 50px;
+  height: 50px;
+  border-radius: 40px;
+  float: left;
+  overflow: hidden;
+}
+
+.search-container .right-panel-list .header .img-container img {
+  width: 100%;
+  height: 100%;
+}
+
+.search-container .right-panel-list .header .name {
+  font-weight: bold;
+  margin-top: 5px;
+  margin-left: 55px;
+  margin-bottom: 0;
+}
+
+.search-container .right-panel-list .header .time {
+  font-size: 10px;
+  margin-left: 55px;
+  color: #BBB;
+}
+
+.search-container .right-panel-list .header .type-tag {
+  position: absolute;
+  right: 10px;
+  top: 20px;
+  height: 25px;
+  line-height: 25px;
+  text-align: center;
+  color: #9F0202;
+  width: 60px;
+  border: 1px solid #9F0202;
+  font-size: 10px;
+}
+
+.search-container .right-panel-list .body {
+  min-height: 120px;
+  height: auto;
+  border-bottom: 2px solid #D0D0D1;
+}
+
+.search-container .right-panel-list .body .desp {
+  padding: 2px 8px;
+  min-height: 20px;
+  height: auto;
+  font-family: "微软雅黑";
+  word-break: break-all;
+  margin-top: 10px;
+}
+
+.search-container .right-panel-list .body .desp-picture {
+  height: 100px;
+  text-align: center;
+  line-height: 100px;
+  margin-bottom: 10px;
+}
+
+.search-container .right-panel-list .body .desp-picture .picture {
+  width: 90px;
+  height: 90px;
+  display: inline-block;
+  margin-right: 10px;
+  vertical-align: middle;
+  overflow: hidden;
+}
+
+.search-container .right-panel-list .body .desp-picture .picture img {
+  width: 100%;
+  height: 100%;
+}
+
+.search-container .right-panel-list .footer {
+  height: 50px;
+}
+
+.search-container .right-panel-list .footer .price {
+  height: 30px;
+  width: 60px;
+  line-height: 30px;
+  float: left;
+  vertical-align: middle;
+  text-align: center;
+  color: #9F0202;
+  border-right: 1px solid #D0D0D1;
+  font-size: 20px;
+  font-weight: bold;
+  margin-top: 10px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.search-container .right-panel-list .footer .info {
+  float: left;
+  height: 50px;
+  width: auto;
+  font-size: 10px;
+  padding-top: 5px;
+  overflow: hidden;
+  margin-left: 5px;
+  font-family: "微软雅黑"
+}
+
+.search-container .right-panel-list .footer .place {
+  margin-top: 5px;
+  height: 20px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.search-container .right-panel-list .footer .phone {
+  height: 25px;
+  position: relative;
+}
+
+.search-container .right-panel-list .footer .phone .phone-cover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 20px;
+  width: 100%;
+  background: #9F0202;
+  border-radius: 5px;
+  color: white;
+  font-family: '微软雅黑';
+  line-height: 20px;
+}
+
+.search-container .right-panel-list .footer .purchase {
+  width: 50px;
+  height: 30px;
+  line-height: 30px;
+  float: right;
+  background: red;
+  background: #9F0202;
+  border-radius: 10px;
+  color: white;
+  font-family: "微软雅黑";
+  vertical-align: middle;
+  text-align: center;
+  margin-top: 10px;
+  margin-right: 10px;
+}
+
+.img-load {
+  position: fixed;
+  bottom: 40%;
+  left: 50%;
+  width: 80px;
+  height: 80px;
+  margin-left: -40px;
+  margin-top: -40px;
+  z-index: 1003;
+  overflow: hidden;
+  opacity: 0.75;
+  display: none;
+}
+
+.img-load img {
+  width: 100%;
+  height: 100%;
+}
+
+.search-panel {
+  opacity: 0.9;
+  background: #F89C8E;
+  box-shadow: 0px 0px 12px 0px rgba(0, 0, 0, 0.12), -4px 0px 8px 0px rgba(0, 0, 0, 0.24);
+  width: 0px;
+  position: fixed;
+  top: 0;
+  right: 0;
+  height:100%;
+  z-index: 10004242;
+}
+
+.search-panel .title {
+  height: 33px;
+}
+
+.search-panel .title .type {
+  width: 123px;
+  font-family: "PingFangSC-Medium";
+  font-size: 13px;
+  color: #f8f9fb;
+  height: 100%;
+  line-height: 33px;
+  text-align: center;
+  display: inline-block;
+}
+
+.search-panel .title .type.no-active {
+  background: #AD6D65;
+}
+
+.search-panel .search-input {
+  width: 236px;
+  margin: 0 auto;
+  margin-top: 17px;
+  height: 48px;
+  position: relative;
+}
+
+.search-panel .search-input input {
+  width: 100%;
+  height: 100%;
+  border: none;
+  text-indent: 10px;
+}
+
+.search-panel .search-input span {
+  position: absolute;
+  top: 15px;
+  left: 14px;
+  color: #f77462;
+}
+
+.search-panel .line {
+  margin-top: 15px;
+  width: 250px;
+  height: 25px;
+  line-height: 25px;
+  background: #EA9384;
+  padding-left: 24px;
+  font-family: "PingFangSC-Medium";
+  font-size: 13px;
+  color: #f8f9fb;
+}
+
+.search-panel .type-container {
+  padding: 0 17px;
+}
+
+.search-panel .type-container .goods-type {
+  width: 100px;
+  height: 25px;
+  border-radius: 100px;
+  box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.50);
+  background: #e0e0e0;
+  display: inline-block;
+  line-height: 25px;
+  text-align: center;
+  color: white;
+  margin-top: 6px;
+  font-family: "PingFangSC-Medium";
+}
+
+.search-panel .type-container .goods-type.active {
+  color: #f77462;
+  background: #f8f9fb;
+}
+
+.search-panel .type-container .place-type {
+  width: 65px;
+  height: 25px;
+  border-radius: 100px;
+  box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.50);
+  background: #e0e0e0;
+  display: inline-block;
+  line-height: 25px;
+  text-align: center;
+  color: white;
+  margin-top: 6px;
+  font-family: "PingFangSC-Medium";
+}
+.search-panel .type-container .place-type.active {
+  color: #f77462;
+  background: #f8f9fb;
+}
+
+
+.search-panel .go {
+  margin-top: 20px;
+  width: 250px;
+  height: 56px;
+  text-align: center;
+}
+
+.search-panel .go .go-edit {
+  width: 56px;
+  height: 56px;
+  display: inline-block;
+  background: #f77462;
+  box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.12), 0px 2px 2px 0px rgba(0, 0, 0, 0.12);
+  border-radius: 100%;
+  font-family: "PingFangSC-Semibold";
+  color: #f8f9fb;
+  text-align: center;
+  line-height: 56px
+}
+
+.search-panel .go .go-edit .span {
+  font-size: 20px;
+}
+.search-panel .footer{
+  display:none;
+  width:auto;
+  line-height: 13px;
+  position:absolute;
+  bottom:20px;
+  right:10px;
+  color:#f8f9fb;
+  font-size:13px;
+  font-family:"SFNSText";
+}
+.index-sp-body {
+  position: absolute;
+  top: 180px;
+  left: 0;
+  width: 100%;
+}

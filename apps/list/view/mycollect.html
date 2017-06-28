@@ -1,0 +1,71 @@
+<div class="back-ground-container" ng-click="hideBig()">
+  <img class="back-ground-img" ng-click="hideBig()" ng-src="{{
+    bigPic||'../images/default.jpg'
+    }}"/>
+</div>
+<div class="body-container" style="border-top:none">
+          <div class="title">
+              已售出或下架的商品会自动取消收藏哦～
+          </div>
+          <div style="padding:0 5px">
+            <div class="right-panel-list clearfix" ng-repeat="goods in onsells" ng-class="{sell:goods.business==0}">
+                <div class="header">
+                    <div class="img-container"><img ng-src="{{goods.user.headImgUrl}}"/></div>
+                    <p class="name" style="color:#5d5d5d">{{goods.user.username}}</p>
+                    <p class="time">{{goods.updateTime}}&nbsp;{{goods.updateMini}}</p>
+                    <div class="type-tag">
+                      <span ng-if="goods.category=='0'">其他</span>
+                      <span ng-if="goods.category=='1'">女生穿搭</span>
+                      <span ng-if="goods.category=='2'">男生穿搭</span>
+                      <span ng-if="goods.category=='3'">数码电器</span>
+                      <span ng-if="goods.category=='4'">护肤彩妆</span>
+                      <span ng-if="goods.category=='5'">书刊学品</span>
+                      <span ng-if="goods.category=='6'">生活百货</span>
+                      <span ng-if="goods.category=='7'">运动票券</span>
+                    </div>
+                    <div class="type-tag ask-for" ng-if="goods.business==1">
+                        求购
+                    </div>
+                    <div class="collect" ng-click="noCollect(goods.commodityId)">
+                       <i class="iconfont icon-wujiaoxing" style="font-size:25px;color:#f77462"></i>
+                    </div>
+                </div>
+                <div class="body">
+                    <div class="desp" style="color:#5d5d5d">{{goods.description}}</div>
+                    <div class="desp-picture clearfix">
+                         <div class="picture-1 picture" ng-if="goods.pictureA!=null">
+                            <img ng-src="{{goods.pictureA||'../images/default.jpg'}}" ng-click="showBig(goods.pictureA)">
+                         </div>
+                         <div class="picture-2 picture" ng-if="goods.pictureB!=null">
+                            <img ng-src="{{goods.pictureB||'../images/default.jpg'}}" ng-click="showBig(goods.pictureB)"/>
+                         </div>
+                    </div>
+                </div>
+                <div class="footer clearfix">
+                    <div class="price">¥{{goods.price}}
+                    </div>
+                    <div class="info">
+                        <div class="place" style="color:#5d5d5d">
+                           <span ng-if="goods.user.address==1">厦门大学思明校区</span>
+                           <span ng-if="goods.user.address==2">厦门大学海韵校区</span>
+                           <span ng-if="goods.user.address==3">厦门大学翔安校区</span>
+                        </div>
+                      <!--   <div class="phone">
+                          <div class="phone-cover" show-link>
+                             点此查看联系方式
+                          </div>
+
+                          {{goods.user.phone}}
+                        </div> -->
+                    </div>
+                    <div class="phone">
+                       <div class="phone-cover" show-link ng-class="{sell:goods.business==0}">
+                             联系方式
+                       </div>
+                       <span>手机:{{goods.user.phone}}</span></br>
+                       <span>微信:{{goods.user.wechat}}</span>
+                    </div>
+                </div>
+            </div>
+          </div>
+</div>
